@@ -10,5 +10,5 @@ class Post(models.Model):
     likes = models.IntegerField(default=0)
     dislikes = models.IntegerField(default=0)
 
-    def __self__(self):
-        return self.content
+    def __str__(self):
+        return self.content[:30]

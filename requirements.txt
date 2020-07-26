@@ -1,4 +1,5 @@
 Django~=2.2.4
+django-crispy-forms
 psycopg2
 flake8
 autopep8
