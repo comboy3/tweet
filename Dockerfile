@@ -19,21 +19,20 @@ ENV LANGUAGE="ja_JP:ja" LANG="ja_JP.UTF-8" LC_ALL="ja_JP.UTF-8"
 RUN wget https://www.python.org/ftp/python/3.6.11/Python-3.6.11.tar.xz
 RUN tar xJf Python-3.6.11.tar.xz
 RUN cd ./Python-3.6.11 && \
-    ./configure && \
-    make && \
-    make install
+  ./configure && \
+  make && \
+  make install
 RUN rm Python-3.6.11.tar.xz
 
 # SQLiteの最新化（3.31.1の場合）
-
 RUN wget https://www.sqlite.org/2020/sqlite-autoconf-3310100.tar.gz
 RUN tar xvfz sqlite-autoconf-3310100.tar.gz
 
 # ビルドしてインストール
 RUN cd sqlite-autoconf-3310100 && \
-    ./configure --prefix=/usr/local && \
-    make && \
-    make install
+  ./configure --prefix=/usr/local && \
+  make && \
+  make install
 RUN rm sqlite-autoconf-3310100.tar.gz
 RUN rm -rf ./sqlite-autoconf-3310100
 
