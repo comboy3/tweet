@@ -18,12 +18,15 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Post',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True,
+                                        primary_key=True, serialize=False, verbose_name='ID')),
                 ('content', models.TextField()),
-                ('date_posted', models.DateTimeField(default=django.utils.timezone.now)),
+                ('date_posted', models.DateTimeField(
+                    default=django.utils.timezone.now)),
                 ('likes', models.IntegerField(default=0)),
                 ('dislikes', models.IntegerField(default=0)),
-                ('author', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                ('author', models.ForeignKey(
+                    on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),
     ]
